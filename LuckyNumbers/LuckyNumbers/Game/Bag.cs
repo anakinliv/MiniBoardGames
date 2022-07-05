@@ -8,14 +8,26 @@ namespace LuckyNumbers.Game
     {
         public List<Token> tokens;
 
-        public Bag()
+        Random rnd;
+
+        public Bag(Random rnd)
         {
             tokens = new List<Token>();
+            this.rnd = rnd;
         }
 
         public void PutIn(Token token)
         {
             tokens.Add(token);
+        }
+
+        public Token TakeOut()
+        {
+            if (tokens.Count == 0)
+                return null;
+            var token = tokens[rnd.Next(tokens.Count)];
+            tokens.RemoveAt(rnd.Next(tokens.Count));
+            return token;
         }
     }
 }

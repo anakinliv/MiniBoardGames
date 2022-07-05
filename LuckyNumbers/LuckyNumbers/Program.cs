@@ -1,4 +1,5 @@
 ﻿using System;
+using LuckyNumbers.Game;
 
 namespace LuckyNumbers
 {
@@ -7,6 +8,8 @@ namespace LuckyNumbers
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+            LuckyNumbersGame game = new LuckyNumbersGame(1);
+            game.Start();
         }
     }
 }

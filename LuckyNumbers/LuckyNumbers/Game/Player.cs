@@ -11,5 +11,11 @@ namespace LuckyNumbers.Game
         {
             board = new Board();
         }
+
+        internal void InitBoard(List<Token> startTokens)
+        {
+            board.Clear();
+            board.Init();
+        }
     }
 }
