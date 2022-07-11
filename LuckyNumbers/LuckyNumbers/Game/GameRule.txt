@@ -1,0 +1,3 @@
+﻿### Lucky Numbers ###
+
+EN Rules: https://bga.devds.de/pdf/Lucky_Numbers_RULES_EN.pdf

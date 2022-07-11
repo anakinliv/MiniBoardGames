@@ -10,6 +10,6 @@ namespace LuckyNumbers.Game
         public Node down;
         public Node left;
         public Node right;
-        public Token token;
+        public Tile tile;
     }
 }

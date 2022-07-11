@@ -12,10 +12,16 @@ namespace LuckyNumbers.Game
             board = new Board();
         }
 
-        internal void InitBoard(List<Token> startTokens)
+        internal void InitBoard(List<Tile> startTokens)
         {
             board.Clear();
-            board.Init();
+            startTokens.Sort((a, b) => { return a.val - b.val; });
+            board.Init(startTokens);
+        }
+
+        internal void ShowInfo()
+        {
+            board.ShowBoard();
         }
     }
 }

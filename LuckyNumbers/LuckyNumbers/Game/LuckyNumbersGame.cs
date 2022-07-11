@@ -31,7 +31,7 @@ namespace LuckyNumbers.Game
             {
                 for(int j = 1; j <= LuckyNumbersConst.TokenNumber; j++)
                 {
-                    bag.PutIn(new Token(j, i));
+                    bag.PutIn(new Tile(j, i));
                 }
             }
         }
@@ -40,13 +40,31 @@ namespace LuckyNumbers.Game
         {
             foreach(Player player in playerList)
             {
-                List<Token> startTokens = new List<Token>();
+                List<Tile> startTokens = new List<Tile>();
                 for(int i = 0; i < 4; i++)
                 {
                     startTokens.Add(bag.TakeOut());
                 }
                 player.InitBoard(startTokens);
             }
+            Show();
+            var a = Console.Read();
         }
+
+        /// <summary>
+        /// 按规则显示棋盘
+        /// </summary>
+        public void Show()
+        {
+            foreach(Player player in playerList)
+            {
+                player.ShowInfo();
+            }
+        }
+    }
+
+    enum GamePhase
+    {
+        
     }
 }

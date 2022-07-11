@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
 namespace LuckyNumbers.Game
 {
-    internal class Token
+    internal class Tile
     {
-        int val;
+        public int val;
         int group;
-        public Token(int val, int group)
+        public Tile(int val, int group)
         {
             this.val = val;
             this.group = group;

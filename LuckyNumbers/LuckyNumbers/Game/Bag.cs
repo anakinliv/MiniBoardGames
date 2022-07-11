@@ -6,22 +6,22 @@ namespace LuckyNumbers.Game
 {
     internal class Bag
     {
-        public List<Token> tokens;
+        public List<Tile> tokens;
 
         Random rnd;
 
         public Bag(Random rnd)
         {
-            tokens = new List<Token>();
+            tokens = new List<Tile>();
             this.rnd = rnd;
         }
 
-        public void PutIn(Token token)
+        public void PutIn(Tile token)
         {
             tokens.Add(token);
         }
 
-        public Token TakeOut()
+        public Tile TakeOut()
         {
             if (tokens.Count == 0)
                 return null;

@@ -8,7 +8,7 @@ namespace LuckyNumbers
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            LuckyNumbersGame game = new LuckyNumbersGame(1);
+            LuckyNumbersGame game = new LuckyNumbersGame(2);
             game.Start();
         }
     }

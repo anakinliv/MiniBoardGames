@@ -23,20 +23,33 @@ namespace LuckyNumbers.Game
         {
             foreach (var node in nodes)
             {
-                node.token = null;
+                node.tile = null;
             }
         }
 
-        public void Init()
+        public void Init(List<Tile> startTokens)
         {
-            for(int i = 0; i < LuckyNumbersConst.BoardWidth ; i++)
+            for(int i = 0; i < startTokens.Count; i++)
             {
-                for(int j = 0; j < LuckyNumbersConst.BoardHeight ; j++)
-                {
-                    var node = new Node();
-                    
-                }
+                nodes[i, i].tile = startTokens[i];
             }
+        }
+
+        public void ShowBoard()
+        {
+            var sb = new StringBuilder();
+            for(int i = 0;i<LuckyNumbersConst.BoardHeight;i++)
+            {
+                for(int j = 0;j < LuckyNumbersConst.BoardWidth;j++)
+                {
+                    if (nodes[i, j].tile == null)
+                        sb.Append("[--]");
+                    else
+                        sb.Append(string.Format("[{0:d2}]", nodes[i, j].tile.val));
+                }
+                sb.AppendLine();
+            }
+            Console.WriteLine(sb.ToString());
         }
     }
 }
