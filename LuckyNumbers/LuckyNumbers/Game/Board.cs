@@ -6,24 +6,20 @@ namespace LuckyNumbers.Game
 {
     internal class Board
     {
-        Node[,] nodes;
+        Tile[,] spaces;
         public Board()
         {
-            nodes = new Node[LuckyNumbersConst.BoardWidth,LuckyNumbersConst.BoardHeight];
-            for(int i = 0; i < LuckyNumbersConst.BoardWidth; i++)
-            {
-                for (int j = 0; j < LuckyNumbersConst.BoardHeight; j++)
-                {
-                    nodes[i, j] = new Node();
-                }
-            }
+            spaces = new Tile[LuckyNumbersConst.BoardWidth,LuckyNumbersConst.BoardHeight];
         }
 
         public void Clear()
         {
-            foreach (var node in nodes)
+            for(int i = 0; i < LuckyNumbersConst.BoardWidth; i++)
             {
-                node.tile = null;
+                for(int j = 0; j < LuckyNumbersConst.BoardHeight; j++)
+                {
+                    spaces[i, j] = null;
+                }
             }
         }
 
@@ -31,7 +27,7 @@ namespace LuckyNumbers.Game
         {
             for(int i = 0; i < startTokens.Count; i++)
             {
-                nodes[i, i].tile = startTokens[i];
+                spaces[i, i] = startTokens[i];
             }
         }
 
@@ -42,10 +38,10 @@ namespace LuckyNumbers.Game
             {
                 for(int j = 0;j < LuckyNumbersConst.BoardWidth;j++)
                 {
-                    if (nodes[i, j].tile == null)
+                    if (spaces[i, j] == null)
                         sb.Append("[--]");
                     else
-                        sb.Append(string.Format("[{0:d2}]", nodes[i, j].tile.val));
+                        sb.Append(string.Format("[{0:d2}]", spaces[i, j].val));
                 }
                 sb.AppendLine();
             }
